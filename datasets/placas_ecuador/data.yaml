@@ -1,0 +1,13 @@
+train: ../train/images
+val: ../valid/images
+test: ../test/images
+
+nc: 1
+names: ['car plate']
+
+roboflow:
+  workspace: modelo-tuasu
+  project: placas-ecuador
+  version: 2
+  license: Public Domain
+  url: https://universe.roboflow.com/modelo-tuasu/placas-ecuador/dataset/2

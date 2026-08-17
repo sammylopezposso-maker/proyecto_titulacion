@@ -1,0 +1,20 @@
+[
+    {
+        "video": "20260805_151839000_iOS.MP4",
+        "placa": "PXT338",
+        "fecha": "2026-07-31",
+        "hora": "12:36:02",
+        "captured_at": "2026-07-31T12:36:02",
+        "frame": 1,
+        "segundo_video": 0.0
+    },
+    {
+        "video": "20260805_151839000_iOS.MP4",
+        "placa": "ICE037",
+        "fecha": "2026-07-31",
+        "hora": "12:36:10",
+        "captured_at": "2026-07-31T12:36:10",
+        "frame": 201,
+        "segundo_video": 8.0
+    }
+]

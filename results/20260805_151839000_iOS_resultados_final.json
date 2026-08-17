@@ -1,0 +1,36 @@
+[
+    {
+        "video": "20260805_151839000_iOS.MP4",
+        "track_id": 1,
+        "placa": "PXT338",
+        "fecha": "2026-07-31",
+        "hora": "12:36:02",
+        "captured_at": "2026-07-31T12:36:02",
+        "frame": 1,
+        "segundo_video": 0.0,
+        "yolo_confidence": 0.7752,
+        "ocr_confidence": 0.9999,
+        "ocr_engine": "PaddleOCR",
+        "timestamp_source": "VIDEO_OVERLAY_OCR",
+        "metodo_confirmacion": "OCR_ALTA_CONFIANZA",
+        "estado": "MATCH_CONFIRMADO",
+        "evidencia": "evidencias\\20260805_151839000_iOS_PXT338_frame_1.jpg"
+    },
+    {
+        "video": "20260805_151839000_iOS.MP4",
+        "track_id": 3,
+        "placa": "ICE037",
+        "fecha": "2026-07-31",
+        "hora": "12:36:10",
+        "captured_at": "2026-07-31T12:36:10",
+        "frame": 201,
+        "segundo_video": 8.0,
+        "yolo_confidence": 0.667,
+        "ocr_confidence": 0.9766,
+        "ocr_engine": "PaddleOCR",
+        "timestamp_source": "VIDEO_OVERLAY_OCR",
+        "metodo_confirmacion": "OCR_ALTA_CONFIANZA",
+        "estado": "MATCH_CONFIRMADO",
+        "evidencia": "evidencias\\20260805_151839000_iOS_ICE037_frame_201.jpg"
+    }
+]

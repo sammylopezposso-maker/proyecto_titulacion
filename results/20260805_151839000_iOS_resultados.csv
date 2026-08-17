@@ -1,0 +1,3 @@
+﻿video,track_id,placa,fecha,hora,captured_at,frame,segundo_video,yolo_confidence,ocr_confidence,ocr_engine,timestamp_source,metodo_confirmacion,estado,evidencia
+20260805_151839000_iOS.MP4,1,PXT338,2026-07-31,12:36:02,2026-07-31T12:36:02,1,0.0,0.7752,0.9999,PaddleOCR,VIDEO_OVERLAY_OCR,OCR_ALTA_CONFIANZA,MATCH_CONFIRMADO,evidencias\20260805_151839000_iOS_PXT338_frame_1.jpg
+20260805_151839000_iOS.MP4,3,ICE037,2026-07-31,12:36:10,2026-07-31T12:36:10,201,8.0,0.667,0.9766,PaddleOCR,VIDEO_OVERLAY_OCR,OCR_ALTA_CONFIANZA,MATCH_CONFIRMADO,evidencias\20260805_151839000_iOS_ICE037_frame_201.jpg
