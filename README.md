@@ -1284,6 +1284,8 @@ python -m pip install --upgrade pip setuptools wheel
 
 # 6. Instalar dependencias
 python -m pip install -r requirements.txt
+python -m pip install paddlepaddle==3.2.2
+python -m pip install paddleocr
 
 # 7. Ejecutar
 python main.py
