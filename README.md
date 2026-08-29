@@ -31,7 +31,7 @@ El proyecto utiliza las siguientes tecnologías principales:
 El pipeline del sistema es:
 
 ```text
-Video de entrada
+Videos de entrada
        ↓
 Extracción de frames
        ↓
