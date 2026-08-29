@@ -1159,43 +1159,403 @@ models/license_plate_detector.pt
 
 ---
 
-# 33. Reproducibilidad
+# 33. Reproducibilidad experimental
 
-Para asegurar que otro integrante pueda reproducir los resultados deben mantenerse controlados:
+Con el objetivo de garantizar la reproducibilidad de los resultados presentados en este proyecto, se registran de manera explícita la versión del código fuente, la versión de Python, las dependencias utilizadas, el modelo entrenado, el dataset y los principales artefactos empleados durante la experimentación.
 
-* versión de Python;
-* versiones de dependencias;
-* versión del modelo YOLO;
-* dataset utilizado;
-* parámetros de inferencia;
-* videos de prueba;
-* configuración experimental;
-* resultados obtenidos;
-* commit de Git correspondiente.
+## 33.1 Identificación del entorno experimental
 
-La versión de Python utilizada debe comprobarse mediante:
+| Elemento | Versión / referencia utilizada |
+| --- | --- |
+| Código fuente | Commit Git `48067119992c37a162de1908d6b05406af7cffbe` |
+| Python | `3.12.10` |
+| Dependencias | `requirements.txt` |
+| PaddlePaddle | `3.2.2` |
+| PaddleOCR | `3.7.0` |
+| Ultralytics | `8.4.120` |
+| OpenCV | `5.0.0.93` |
+| NumPy | `2.3.5` |
+| Modelo YOLO | `models/license_plate_detector.pt` |
+| Dataset | `datasets/placas_ecuador/` |
+| Configuración dataset | `datasets/placas_ecuador/data.yaml` |
 
-```bash
-python --version
+---
+
+## 33.2 Versión exacta del código fuente
+
+Los resultados y métricas reportados en el documento final fueron obtenidos utilizando la siguiente revisión del repositorio:
+
+```text
+48067119992c37a162de1908d6b05406af7cffbe
 ```
 
-Resultado esperado:
+El identificador del commit utilizado fue obtenido mediante:
+
+```bash
+git rev-parse HEAD
+```
+
+Para reproducir exactamente la versión del código utilizada en los experimentos, se debe clonar el repositorio y posteriormente posicionarse en el commit registrado:
+
+```bash
+git clone https://github.com/sammylopezposso-maker/proyecto_titulacion.git
+cd proyecto_titulacion
+git checkout 48067119992c37a162de1908d6b05406af7cffbe
+```
+
+Esto permite asegurar que modificaciones posteriores realizadas sobre el repositorio no alteren el código utilizado para obtener los resultados reportados.
+
+---
+
+## 33.3 Versión de Python
+
+El entorno utilizado para la generación de los resultados corresponde a:
 
 ```text
 Python 3.12.10
 ```
 
-Las dependencias pueden comprobarse mediante:
+La versión puede verificarse mediante:
 
 ```bash
-pip freeze
+python --version
 ```
 
-El commit utilizado puede obtenerse mediante:
+El resultado esperado es:
+
+```text
+Python 3.12.10
+```
+
+---
+
+## 33.4 Dependencias utilizadas
+
+Las versiones exactas de las dependencias utilizadas para generar los resultados se encuentran registradas en:
+
+```text
+requirements.txt
+```
+
+El archivo fue generado desde el entorno virtual utilizado durante la experimentación mediante:
+
+```bash
+python -m pip freeze > requirements.txt
+```
+
+Por lo tanto, `requirements.txt` representa una instantánea del entorno de software utilizado para obtener los resultados reportados.
+
+Las principales dependencias utilizadas son:
+
+| Librería | Versión |
+| --- | --- |
+| PaddlePaddle | `3.2.2` |
+| PaddleOCR | `3.7.0` |
+| Ultralytics | `8.4.120` |
+| OpenCV | `5.0.0.93` |
+| NumPy | `2.3.5` |
+
+El listado completo de dependencias directas y transitivas se encuentra almacenado en `requirements.txt`.
+
+Para consultar el entorno instalado puede ejecutarse:
+
+```bash
+python -m pip freeze
+```
+
+---
+
+## 33.5 Reconstrucción del entorno experimental
+
+Para reproducir el entorno utilizado durante las pruebas se recomienda crear un nuevo entorno virtual con Python 3.12.10.
+
+### Windows PowerShell
+
+```powershell
+py -3.12 -m venv .venv
+
+.\.venv\Scripts\Activate.ps1
+
+python --version
+
+python -m pip install -r requirements.txt
+```
+
+Después de la instalación puede comprobarse el ambiente mediante:
+
+```powershell
+python -m pip freeze
+```
+
+---
+
+### Linux / macOS
+
+```bash
+python3.12 -m venv .venv
+
+source .venv/bin/activate
+
+python --version
+
+python -m pip install -r requirements.txt
+```
+
+Posteriormente:
+
+```bash
+python -m pip freeze
+```
+
+---
+
+## 33.6 Modelo de detección utilizado
+
+El modelo YOLO utilizado para la detección de placas vehiculares se encuentra en:
+
+```text
+models/license_plate_detector.pt
+```
+
+Este archivo corresponde al modelo utilizado por el pipeline para generar los resultados experimentales reportados.
+
+No se recomienda reemplazar este archivo por versiones obtenidas mediante nuevos entrenamientos cuando el objetivo sea reproducir exactamente las métricas documentadas, ya que un nuevo modelo puede generar detecciones diferentes.
+
+La existencia del modelo puede verificarse mediante:
+
+```text
+proyecto_alpr/
+│
+├── models/
+│   └── license_plate_detector.pt
+│
+├── main.py
+└── ...
+```
+
+---
+
+## 33.7 Dataset utilizado
+
+El dataset empleado para el entrenamiento y evaluación del detector se encuentra estructurado en:
+
+```text
+datasets/
+└── placas_ecuador/
+    ├── train/
+    │   ├── images/
+    │   └── labels/
+    │
+    ├── valid/
+    │   ├── images/
+    │   └── labels/
+    │
+    ├── test/
+    │   ├── images/
+    │   └── labels/
+    │
+    └── data.yaml
+```
+
+La configuración del dataset está definida en:
+
+```text
+datasets/placas_ecuador/data.yaml
+```
+
+Para reproducir las métricas de entrenamiento deben conservarse las mismas particiones de entrenamiento, validación y prueba utilizadas durante la ejecución experimental.
+
+---
+
+## 33.8 Artefactos necesarios para la reproducción
+
+Para reproducir los resultados reportados deben mantenerse disponibles los siguientes elementos:
+
+```text
+proyecto_alpr/
+│
+├── main.py
+├── paddle_worker.py
+├── train_yolo.py
+├── requirements.txt
+│
+├── models/
+│   └── license_plate_detector.pt
+│
+├── datasets/
+│   └── placas_ecuador/
+│       └── data.yaml
+│
+├── videos/
+│
+└── results/
+```
+
+Los elementos considerados relevantes para la reproducción son:
+
+- código fuente correspondiente al commit registrado;
+- Python 3.12.10;
+- archivo `requirements.txt`;
+- modelo `license_plate_detector.pt`;
+- dataset utilizado;
+- archivo `data.yaml`;
+- parámetros de entrenamiento;
+- parámetros de inferencia;
+- videos utilizados durante las pruebas;
+- criterios de validación y consolidación de matrículas.
+
+---
+
+## 33.9 Verificación del entorno
+
+Antes de ejecutar el proyecto puede verificarse la configuración mediante:
+
+```bash
+python --version
+```
+
+```bash
+python -m pip freeze
+```
 
 ```bash
 git rev-parse HEAD
 ```
+
+Los valores obtenidos deben corresponder con los registrados en esta sección.
+
+Para comprobar las principales dependencias:
+
+```bash
+python -c "import cv2; print('OpenCV:', cv2.__version__)"
+```
+
+```bash
+python -c "import ultralytics; print('Ultralytics:', ultralytics.__version__)"
+```
+
+```bash
+python -c "import paddle; print('PaddlePaddle:', paddle.__version__)"
+```
+
+```bash
+python -c "import paddleocr; print('PaddleOCR:', paddleocr.__version__)"
+```
+
+```bash
+python -c "import numpy; print('NumPy:', numpy.__version__)"
+```
+
+---
+
+## 33.10 Condiciones para reproducir los resultados
+
+Para considerar una ejecución como reproducción del experimento original deben mantenerse sin modificaciones:
+
+1. El commit Git:
+
+```text
+48067119992c37a162de1908d6b05406af7cffbe
+```
+
+2. La versión de Python:
+
+```text
+Python 3.12.10
+```
+
+3. Las versiones contenidas en:
+
+```text
+requirements.txt
+```
+
+4. El modelo:
+
+```text
+models/license_plate_detector.pt
+```
+
+5. El dataset:
+
+```text
+datasets/placas_ecuador/
+```
+
+6. La configuración:
+
+```text
+datasets/placas_ecuador/data.yaml
+```
+
+7. Los parámetros de entrenamiento e inferencia.
+
+8. Los videos utilizados como conjunto de prueba.
+
+9. Los criterios de normalización, validación, seguimiento temporal y consolidación de matrículas.
+
+La modificación de alguno de estos componentes puede provocar diferencias respecto a los resultados y métricas documentados.
+
+---
+
+# 34. Generación y conservación de `requirements.txt`
+
+El archivo `requirements.txt` utilizado para la entrega final debe generarse desde el entorno virtual con el que se obtuvieron los resultados definitivos.
+
+Con `.venv` activo ejecutar:
+
+```bash
+python -m pip freeze > requirements.txt
+```
+
+En Windows PowerShell puede comprobarse mediante:
+
+```powershell
+Get-Content requirements.txt
+```
+
+En Linux/macOS:
+
+```bash
+cat requirements.txt
+```
+
+El archivo resultante debe incorporarse al repositorio Git:
+
+```bash
+git add requirements.txt
+git commit -m "Registrar dependencias del entorno experimental"
+git push
+```
+
+Una vez registrado el entorno definitivo, el archivo no debe regenerarse con versiones diferentes si el objetivo es preservar la reproducción exacta de los resultados entregados.
+
+---
+
+# 35. Registro de la versión experimental definitiva
+
+Una vez incorporados el código final, el modelo y el archivo `requirements.txt`, registrar el commit definitivo mediante:
+
+```bash
+git status
+```
+
+Verificar que no existan cambios pendientes y ejecutar:
+
+```bash
+git rev-parse HEAD
+```
+
+El resultado obtenido debe registrarse permanentemente en la sección **33.2 Versión exacta del código fuente** de este README.
+
+Ejemplo de formato:
+
+```text
+Commit utilizado para generar los resultados:
+REEMPLAZAR_SHA_COMMIT
+```
+
+Este identificador constituye la referencia de la versión experimental utilizada para la generación de los resultados y métricas presentados en el proyecto de titulación.
 
 ---
 
