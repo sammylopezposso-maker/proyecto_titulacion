@@ -1166,7 +1166,7 @@ Con el objetivo de garantizar la reproducibilidad de los resultados presentados 
 ### Ficha técnica de la versión evaluada
 
 * **Versión evaluada:** `v1.0.0`
-* **Commit evaluado:** `802df5b7a142cc74ab7700d53df15a8f0c3a0aed`
+* **Commit evaluado:** `c8449a66b23884d313618e0b22379c97097e7a70`
 * **Python:** `3.12.10`
 * **Modelo:** YOLO11n
 * **Pesos finales:** `models/license_plate_detector.pt`
@@ -1178,7 +1178,7 @@ Con el objetivo de garantizar la reproducibilidad de los resultados presentados 
 
 | Elemento | Versión / referencia utilizada |
 | --- | --- |
-| Código fuente | Commit Git `802df5b7a142cc74ab7700d53df15a8f0c3a0aed` |
+| Código fuente | Commit Git `c8449a66b23884d313618e0b22379c97097e7a70` |
 | Python | `3.12.10` |
 | Dependencias | `requirements.txt` |
 | PaddlePaddle | `3.2.2` |
@@ -1197,7 +1197,7 @@ Con el objetivo de garantizar la reproducibilidad de los resultados presentados 
 Los resultados y métricas reportados en el documento final fueron obtenidos utilizando la siguiente revisión del repositorio:
 
 ```text
-802df5b7a142cc74ab7700d53df15a8f0c3a0aed
+c8449a66b23884d313618e0b22379c97097e7a70
 ```
 
 El identificador del commit utilizado fue obtenido mediante:
@@ -1211,7 +1211,7 @@ Para reproducir exactamente la versión del código utilizada en los experimento
 ```bash
 git clone https://github.com/sammylopezposso-maker/proyecto_titulacion.git
 cd proyecto_titulacion
-git checkout 802df5b7a142cc74ab7700d53df15a8f0c3a0aed
+git checkout c8449a66b23884d313618e0b22379c97097e7a70
 ```
 
 Esto permite asegurar que modificaciones posteriores realizadas sobre el repositorio no alteren el código utilizado para obtener los resultados reportados.
@@ -1466,7 +1466,7 @@ Para considerar una ejecución como reproducción del experimento original deben
 1. El commit Git:
 
 ```text
-802df5b7a142cc74ab7700d53df15a8f0c3a0aed
+c8449a66b23884d313618e0b22379c97097e7a70
 ```
 
 2. La versión de Python:
