@@ -1159,9 +1159,20 @@ models/license_plate_detector.pt
 
 ---
 
-# 33. Reproducibilidad experimental
+# 33. Reproducibilidad
 
 Con el objetivo de garantizar la reproducibilidad de los resultados presentados en este proyecto, se registran de manera explícita la versión del código fuente, la versión de Python, las dependencias utilizadas, el modelo entrenado, el dataset y los principales artefactos empleados durante la experimentación.
+
+### Ficha técnica de la versión evaluada
+
+* **Versión evaluada:** `v1.0.0`
+* **Commit evaluado:** `802df5b7a142cc74ab7700d53df15a8f0c3a0aed`
+* **Python:** `3.12.10`
+* **Modelo:** YOLO11n
+* **Pesos finales:** `models/license_plate_detector.pt`
+* **Dataset Yolo:** 54 imágenes de entrenamiento, 21 de validación y 10 de prueba
+* **Videos de evaluación end-to-end:** 100
+* **Exactitud de placa completa esperada:** 96 %
 
 ## 33.1 Identificación del entorno experimental
 
