@@ -1,0 +1,12 @@
+{
+  "version": "v1.0.0",
+  "commit": "c8449a66b23884d313618e0b22379c97097e7a70",
+  "python": "3.12.10",
+  "detector": "YOLO11n",
+  "precision": 0.8925,
+  "recall": 0.8302,
+  "map50": 0.8678,
+  "map50_95": 0.6601,
+  "end_to_end_accuracy": 0.96,
+  "evaluation_videos": 100
+}
